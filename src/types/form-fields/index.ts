@@ -1,11 +1,10 @@
 export type RegisterFormFields = {
-  firstName: string;
-  lastName: string;
   username: string;
+  email: string;
   password: string;
 };
 
 export type LoginFormFields = {
-  username: string;
+  email: string;
   password: string;
 };

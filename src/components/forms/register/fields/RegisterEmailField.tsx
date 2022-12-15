@@ -8,26 +8,26 @@ type Props = {
   error?: FieldError;
 };
 
-export const FirstNameField: FC<Props> = ({ register, error }) => (
+export const RegisterEmailField: FC<Props> = ({ register, error }) => (
   <div className={inputStyles.inputContainer}>
     <div className={inputStyles.inputContainerHeader}>
       <div className={inputStyles.inputLabel}>
-        <label htmlFor="firstName">First Name</label>
+        <label htmlFor="email">Email</label>
       </div>
       {error && <div className={inputStyles.inputError}>{error.message}</div>}
     </div>
     <input
       className={inputStyles.inputField}
-      id="firstName"
-      {...register("firstName", {
+      id="email"
+      {...register("email", {
         required: "Required",
         maxLength: {
-          value: 32,
-          message: "32 Characters Max",
+          value: 16,
+          message: "16 Characters Max",
         },
         minLength: {
-          value: 2,
-          message: "2 Characters Min",
+          value: 3,
+          message: "3 Characters Min",
         },
       })}
     />

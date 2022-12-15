@@ -1,33 +1,33 @@
 import { FC } from "react";
 import { UseFormRegister, FieldError } from "react-hook-form";
-import { RegisterFormFields } from "../../../../types/form-fields";
+import { LoginFormFields } from "../../../../types/form-fields";
 import inputStyles from "../../../../styles/input.module.scss";
 
 type Props = {
-  register: UseFormRegister<RegisterFormFields>;
+  register: UseFormRegister<LoginFormFields>;
   error?: FieldError;
 };
 
-export const LastNameField: FC<Props> = ({ register, error }) => (
+export const LoginEmailField: FC<Props> = ({ register, error }) => (
   <div className={inputStyles.inputContainer}>
     <div className={inputStyles.inputContainerHeader}>
       <div className={inputStyles.inputLabel}>
-        <label htmlFor="lastName">Last Name</label>
+        <label htmlFor="email">Email</label>
       </div>
       {error && <div className={inputStyles.inputError}>{error.message}</div>}
     </div>
     <input
       className={inputStyles.inputField}
-      id="lastName"
-      {...register("lastName", {
+      id="email"
+      {...register("email", {
         required: "Required",
         maxLength: {
-          value: 32,
-          message: "32 Characters Max",
+          value: 16,
+          message: "16 Characters Max",
         },
         minLength: {
-          value: 2,
-          message: "2 Characters Min",
+          value: 3,
+          message: "3 Characters Min",
         },
       })}
     />
