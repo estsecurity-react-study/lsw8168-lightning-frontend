@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import { RegisterFormFields } from "../../../types/form-fields";
-import { Button } from "../../buttons/Button";
+import { Button } from "../../atoms/Button";
 import { UserNameField } from "./fields/UserNameField";
 import { RegisterEmailField } from "./fields/RegisterEmailField";
 import { RegisterPasswordField } from "./fields/RegisterPasswordField";
