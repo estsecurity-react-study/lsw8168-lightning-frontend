@@ -1,11 +1,11 @@
-import formStyles from "../../../styles/forms.module.scss";
-import buttonStyles from "../../../styles/buttons.module.scss";
+import formStyles from "~/styles/forms.module.scss";
+import buttonStyles from "~/styles/buttons.module.scss";
 import { useRouter } from "next/router";
-import { Button } from "../../atoms/Button";
+import { Button } from "~/components/atoms/Button";
 import { LoginEmailField } from "./fields/LoginEmailField";
 import { LoginPasswordField } from "./fields/LoginPasswordField";
 import { useForm } from "react-hook-form";
-import { LoginFormFields } from "../../../types/form-fields";
+import { LoginFormFields } from "~/types/form-fields";
 import axios, { AxiosError } from "axios";
 
 export const LoginForm = () => {
@@ -55,6 +55,7 @@ export const LoginForm = () => {
       className={formStyles.registerLoginForm}
       onSubmit={handleSubmit(onSubmit)}
     >
+      <h3>로그인</h3>
       <LoginEmailField register={register} error={errors.email} />
       <LoginPasswordField register={register} error={errors.password} />
       <Button className={buttonStyles.defaultButton}>Login</Button>

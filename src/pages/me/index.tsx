@@ -1,6 +1,6 @@
 import type { GetServerSideProps, NextPage } from "next";
 import axios from "axios";
-import { ProfileForm } from "../../components/forms/profile/ProfileForm";
+import { ProfileForm } from "~/components/forms/profile/ProfileForm";
 
 const Me: NextPage<{ profile: any }> = ({ profile }) => {
   return (

@@ -1,10 +1,10 @@
-import formStyles from "../../../styles/forms.module.scss";
+import formStyles from "~/styles/forms.module.scss";
 import { useForm } from "react-hook-form";
 import dayjs from "dayjs";
-import { Button } from "../../atoms/Button";
-import buttonStyles from "../../../styles/buttons.module.scss";
-import { ProfileFormFields } from "../../../types/form-fields";
-import { FormInput } from "../../molecules/FormInput";
+import { Button } from "~/components/atoms/Button";
+import buttonStyles from "~/styles/buttons.module.scss";
+import { ProfileFormFields } from "~/types/form-fields";
+import { FormInput } from "~/components/molecules/FormInput";
 import axios, { AxiosError } from "axios";
 import { useRouter } from "next/router";
 
@@ -27,8 +27,8 @@ export const ProfileForm = ({ ...profile }) => {
     },
   });
 
-  const onChangePassword = () => {
-    router.push("/me/changePassword");
+  const onChangeCheck = () => {
+    router.push("/me/CheckPassword");
   };
 
   const onSubmit = async (data: ProfileFormFields) => {
@@ -47,7 +47,8 @@ export const ProfileForm = ({ ...profile }) => {
           withCredentials: true,
         }
       );
-      router.push("/me");
+      // router.push("/me");
+      router.replace(router.asPath);
     } catch (error) {
       const { response } = error as unknown as AxiosError;
       if (response) {
@@ -60,6 +61,7 @@ export const ProfileForm = ({ ...profile }) => {
 
   return (
     <form className={formStyles.registerLoginForm}>
+      <h3>프로필</h3>
       <FormInput<ProfileFormFields>
         id="id"
         name="id"
@@ -129,9 +131,9 @@ export const ProfileForm = ({ ...profile }) => {
         </Button>
         <Button
           className={buttonStyles.defaultButton}
-          onClick={handleSubmit(onChangePassword)}
+          onClick={handleSubmit(onChangeCheck)}
         >
-          비밀번호 수정
+          비밀번호 변경
         </Button>
       </div>
     </form>

@@ -1,7 +1,7 @@
 import { FC, forwardRef } from "react";
 
 export type InputSize = "medium" | "large";
-export type InputType = "text" | "email";
+export type InputType = "text" | "email" | "password";
 
 export type InputProps = {
   id: string;

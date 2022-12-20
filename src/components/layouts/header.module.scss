@@ -1,0 +1,36 @@
+.layout {
+  position: relative;
+}
+
+.header {
+  z-index: 32;
+  display: flex;
+  padding: 16px;
+  font-size: 14px;
+  line-height: 1.5;
+  align-items: center;
+  flex-wrap: nowrap;
+  border-bottom: 1px solid #414141;
+}
+
+.logo {
+  margin-right: 16px;
+  align-self: stretch;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.items {
+  flex: auto;
+  align-self: stretch;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.link {
+  margin-right: 16px;
+}
+
+.active {
+  color: #35cee9;
+}

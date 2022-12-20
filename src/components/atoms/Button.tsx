@@ -1,5 +1,4 @@
-import { ButtonHTMLAttributes, FC, PropsWithChildren } from 'react';
-import styles from './index.module.scss';
+import { ButtonHTMLAttributes, FC } from "react";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {}
 

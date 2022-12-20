@@ -6,8 +6,8 @@ import {
   Path,
   FieldValues,
 } from "react-hook-form";
-import { Input, InputProps } from "../atoms/Input";
-import inputStyles from "../../styles/input.module.scss";
+import { Input, InputProps } from "~/components/atoms/Input";
+import inputStyles from "~/styles/input.module.scss";
 
 export type FormInputProps<TFormValues extends FieldValues> = {
   name: Path<TFormValues>;
@@ -21,6 +21,7 @@ export const FormInput = <TFormValues extends Record<string, unknown>>({
   name,
   rules,
   errors,
+  type,
   className,
   disabled = false,
   label,
@@ -38,6 +39,7 @@ export const FormInput = <TFormValues extends Record<string, unknown>>({
       </div>
       <Input
         name={name}
+        type={type}
         disabled={disabled}
         className={inputStyles.inputField}
         {...props}

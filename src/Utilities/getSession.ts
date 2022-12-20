@@ -11,7 +11,7 @@ export const getSession = async (context: GetServerSidePropsContext) => {
     })
     .then((response) => Promise.resolve(response))
     .catch((error) => {
-      console.log(error);
+      console.log(error.response.data);
       return null;
     });
 };

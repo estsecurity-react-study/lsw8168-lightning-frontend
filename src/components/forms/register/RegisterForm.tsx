@@ -1,11 +1,11 @@
 import { useForm } from "react-hook-form";
-import { RegisterFormFields } from "../../../types/form-fields";
-import { Button } from "../../atoms/Button";
+import { RegisterFormFields } from "~/types/form-fields";
+import { Button } from "~/components/atoms/Button";
 import { UserNameField } from "./fields/UserNameField";
 import { RegisterEmailField } from "./fields/RegisterEmailField";
 import { RegisterPasswordField } from "./fields/RegisterPasswordField";
-import buttonStyles from "../../../styles/buttons.module.scss";
-import formStyles from "../../../styles/forms.module.scss";
+import buttonStyles from "~/styles/buttons.module.scss";
+import formStyles from "~/styles/forms.module.scss";
 import axios, { AxiosError } from "axios";
 
 export const RegisterForm = () => {
@@ -46,6 +46,7 @@ export const RegisterForm = () => {
       className={formStyles.registerLoginForm}
       onSubmit={handleSubmit(onSubmit)}
     >
+      <h3>회원가입</h3>
       <UserNameField register={register} error={errors.username} />
       <RegisterEmailField register={register} error={errors.email} />
       <RegisterPasswordField register={register} error={errors.password} />
